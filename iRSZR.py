@@ -63,5 +63,6 @@ while True:
                         output_image_path=output_directory+'/'+d+'-'+str(i)+'.jpg',
                         size=int(size))
             i += 1
+        progress_bar.UpdateBar(p, p)
 
 window.close()
