@@ -59,9 +59,12 @@ while True:
             p = len(files)
             progress_bar.UpdateBar(i, p)
             print(files[i])
-            resize_image(input_image_path=input_directory+'/'+files[i],
-                        output_image_path=output_directory+'/'+d+'-'+str(i)+'.jpg',
-                        size=int(size))
+            try:
+                resize_image(input_image_path=input_directory+'/'+files[i],
+                            output_image_path=output_directory+'/'+d+'-'+str(i)+'.jpg',
+                            size=int(size))
+            except Exception as ex:
+                print(ex)
             i += 1
         progress_bar.UpdateBar(p, p)
 
